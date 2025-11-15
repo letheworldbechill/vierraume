@@ -1,0 +1,211 @@
+/* ===============================
+   1. Design Tokens / Basis
+   =============================== */
+
+:root {
+  --color-primary-dark: #0f172a;
+  --color-primary-light: #f8fafc;
+  --color-primary-text: #0f172a;
+  --color-primary-white: #ffffff;
+
+  --gray-900: #0f172a;
+  --gray-700: #475569;
+  --gray-600: #64748b;
+  --gray-400: #94a3b8;
+  --gray-300: #cbd5e1;
+  --gray-100: #f1f5f9;
+
+  --success: #16a34a;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --font-family: "Inter", system-ui, sans-serif;
+
+  --font-size-title-lg: 24px;
+  --font-size-title-md: 20px;
+  --font-size-body: 14px;
+  --font-size-label: 12px;
+
+  --radius-pill: 999px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.06);
+
+  --max-width-screen: 960px;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary-light: #0f172a;
+    --color-primary-text: #f8fafc;
+    --color-primary-white: #1e293b;
+  }
+}
+
+
+/* Global */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-primary-light);
+  color: var(--color-primary-text);
+  font-family: var(--font-family);
+}
+
+.screen {
+  max-width: var(--max-width-screen);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+.section {
+  margin-bottom: var(--space-8);
+}
+
+.section-header {
+  margin-bottom: var(--space-4);
+}
+
+.section-title {
+  font-size: var(--font-size-title-md);
+  font-weight: 600;
+  margin: 0;
+}
+
+.section-subtitle {
+  margin: var(--space-1) 0 0 0;
+  font-size: var(--font-size-label);
+  color: var(--gray-600);
+}
+
+
+/* Header */
+.page-header {
+  margin-bottom: var(--space-8);
+}
+
+.page-title {
+  font-size: var(--font-size-title-lg);
+  margin: 0;
+}
+
+.page-subtitle {
+  font-size: var(--font-size-label);
+  margin: var(--space-1) 0 0 0;
+  color: var(--gray-600);
+}
+
+
+/* Cards */
+.card {
+  background: var(--color-primary-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+}
+
+.card-title {
+  margin: 0 0 var(--space-3) 0;
+  font-size: var(--font-size-title-md);
+}
+
+.card-body {
+  margin-bottom: var(--space-4);
+  color: var(--gray-700);
+}
+
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  min-height: 48px;
+}
+
+.btn-primary {
+  background: var(--color-primary-dark);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #020617;
+}
+
+
+/* Tasks / Rooms */
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-item {
+  background: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.task-item:active {
+  transform: scale(0.98);
+}
+
+.task-title {
+  margin: 0;
+  font-weight: 500;
+}
+
+.task-meta {
+  margin: 0;
+  font-size: var(--font-size-label);
+  color: var(--gray-600);
+}
+
+/* Done state für Rooms */
+.room.done {
+  background: var(--gray-100);
+  opacity: 0.8;
+}
+
+.room.done .task-checkbox {
+  accent-color: var(--success);
+}
+
+
+/* Chart */
+#chart {
+  width: 100% !important;
+}
+
+
+/* Footer */
+.page-footer {
+  padding-top: var(--space-4);
+}
+
+.footer-content {
+  border-top: 1px solid var(--gray-100);
+  padding-top: var(--space-3);
+}
+
+.footer-text {
+  margin: 0;
+  font-size: var(--font-size-label);
+  color: var(--gray-600);
+}
