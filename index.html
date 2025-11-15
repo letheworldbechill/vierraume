@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vier Räume – tägliche Klarheit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="screen">
+
+    <!-- Header -->
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">Vier Räume</h1>
+        <p class="page-subtitle">Einmal täglich vollständige Klarheit erleben</p>
+      </div>
+    </header>
+
+
+    <!-- Rooms -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Vier Räume</h2>
+        <p class="section-subtitle">Tippe einen Raum an, wenn er heute vollständig frei ist</p>
+      </div>
+
+      <div class="tasks-list">
+
+        <div class="task-item room" onclick="toggleRoom(this, 'Schlafzimmer')">
+          <input type="checkbox" class="task-checkbox" />
+          <div class="task-content">
+            <p class="task-title">Schlafzimmer</p>
+            <p class="task-meta">Bett gemacht, Ablagen leer, Luft ruhig</p>
+          </div>
+        </div>
+
+        <div class="task-item room" onclick="toggleRoom(this, 'Wohnzimmer')">
+          <input type="checkbox" class="task-checkbox" />
+          <div class="task-content">
+            <p class="task-title">Wohnzimmer</p>
+            <p class="task-meta">Tischflächen frei, keine herumliegenden Dinge</p>
+          </div>
+        </div>
+
+        <div class="task-item room" onclick="toggleRoom(this, 'Küche')">
+          <input type="checkbox" class="task-checkbox" />
+          <div class="task-content">
+            <p class="task-title">Küche</p>
+            <p class="task-meta">Spüle leer, Flächen abgewischt</p>
+          </div>
+        </div>
+
+        <div class="task-item room" onclick="toggleRoom(this, 'Bad')">
+          <input type="checkbox" class="task-checkbox" />
+          <div class="task-content">
+            <p class="task-title">Bad</p>
+            <p class="task-meta">Flächen trocken, Handtuch hängt</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- Summary -->
+    <section class="section">
+      <div class="card">
+        <h3 class="card-title">Heute</h3>
+        <p id="summaryText" class="card-body">Noch kein Raum vollständig frei.</p>
+        <button class="btn btn-primary" onclick="resetDay()">🔄 Neuer Tag</button>
+      </div>
+    </section>
+
+
+
+    <!-- Stats -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Verlauf</h2>
+        <p class="section-subtitle">Letzte 7 Tage</p>
+      </div>
+      <div class="card">
+        <canvas id="chart" height="180"></canvas>
+      </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer">
+      <div class="footer-content">
+        <p class="footer-text">Lebensfreude Zuhause – Klarheit als tägliche Praxis.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
